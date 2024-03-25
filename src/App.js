@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import HeadImage from './components/HeaderImage/HeadImage';
+import ThreatInput from './components/ThreatInput/ThreatInput';
+import ThreatResponse from './components/ThreatResponse/ThreatResponse';
+import Appcss from './App.css'
 
 function App() {
+  const [threatResponse, setThreatResponse] = useState(null);
+
+  const handleThreatSubmit = (response) => {
+    // Set the response received from the server
+    setThreatResponse(response);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <div className='comp-container'>
+        <HeadImage />
+        <div className="ThreatInfo-container">
+          <ThreatInput onSubmit={handleThreatSubmit} />
+        </div>
+        <div className="ThreatResponse-container">
+          <ThreatResponse response={threatResponse} />
+        </div>
+      </div>
     </div>
   );
 }

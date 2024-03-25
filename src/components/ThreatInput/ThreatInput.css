@@ -1,0 +1,7 @@
+.Inputborder {
+    width: 30%;
+    height: 400px;
+    display: flex;
+    padding: 0 1rem;
+    border-right: 2px solid black; 
+}
