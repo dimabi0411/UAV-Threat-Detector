@@ -1,5 +1,3 @@
-// HeadImage.js
-
 import React, { useState } from 'react';
 import { FcDatabase } from "react-icons/fc";
 import Modal from '../Modal/Modal';

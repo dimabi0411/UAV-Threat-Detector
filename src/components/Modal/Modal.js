@@ -13,7 +13,7 @@ const Modal = ({ closeModal, savedData }) => {
       <div className="modal-content">
         <div className="modal-header">
           <h2 style={{marginLeft: "10px"}}>Saved Data</h2>
-          <LuPanelRightClose onClick={closeModal} style={{fontSize: "40px", marginRight: "10px"}}/>
+          <LuPanelRightClose onClick={closeModal} style={{fontSize: "40px", marginRight: "10px", cursor: "pointer"}}/>
         </div>
 
         <div className="modal-body">
@@ -36,7 +36,8 @@ const Modal = ({ closeModal, savedData }) => {
                       <p>ICAO24: {plane.icao24}</p>
                       <p>CallSign: {plane.callSign}</p>
                       <p>Origin Country: {plane.originCountry}</p>
-                      {/* Render other relevant information about the plane */}
+                      <p>Location: {plane.latitude}, {plane.longitude}</p>
+                      <p>Squawk: {plane.squawk}</p>
                     </div>
                   ))}
                 </div>

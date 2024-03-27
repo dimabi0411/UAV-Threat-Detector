@@ -8,7 +8,6 @@ function App() {
   const [threatResponse, setThreatResponse] = useState(null);
 
   const handleThreatSubmit = (response) => {
-    // Set the response received from the server
     setThreatResponse(response);
   };
 

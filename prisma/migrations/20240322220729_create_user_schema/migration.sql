@@ -1,4 +1,3 @@
--- CreateTable
 CREATE TABLE "Threat" (
     "id" SERIAL NOT NULL,
     "location" TEXT NOT NULL,
@@ -8,7 +7,6 @@ CREATE TABLE "Threat" (
     CONSTRAINT "Threat_pkey" PRIMARY KEY ("id")
 );
 
--- CreateTable
 CREATE TABLE "Plane" (
     "id" SERIAL NOT NULL,
     "icao24" TEXT NOT NULL,
@@ -27,5 +25,4 @@ CREATE TABLE "Plane" (
     CONSTRAINT "Plane_pkey" PRIMARY KEY ("id")
 );
 
--- AddForeignKey
 ALTER TABLE "Plane" ADD CONSTRAINT "Plane_threatId_fkey" FOREIGN KEY ("threatId") REFERENCES "Threat"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

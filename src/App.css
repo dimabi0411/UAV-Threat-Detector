@@ -6,13 +6,13 @@
 .comp-container {
   border: 2px solid black;
   width: 1200px;
-  max-width: 95%; /* Limit the maximum width to ensure visibility on smaller screens */
+  max-width: 95%; 
   height: 700px;
-  position: fixed; /* Make the container fixed */
-  top: 50%; /* Position it at the vertical center */
-  left: 50%; /* Position it at the horizontal center */
+  position: fixed;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  overflow: auto; /* Add overflow auto to enable scrolling if content overflows */
+  overflow: auto;
 }
 
 .ThreatInfo-container {
