@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { CiSaveDown2 } from "react-icons/ci";
-
 const ThreatResponse = ({ response }) => {
   const [isSaving, setIsSaving] = useState(false); // State to track saving process
   const [saveError, setSaveError] = useState(null); // State to store save error, if any errors
@@ -44,7 +43,6 @@ const ThreatResponse = ({ response }) => {
   }
 
   const { closestPlane, newClosingTime } = response;
-
 
 
   /*console.log(`ClosestPlane: ${closestPlane}. ClosingTime: ${closingTime}`)
