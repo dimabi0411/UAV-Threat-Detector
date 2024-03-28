@@ -171,7 +171,7 @@ router.post('/save-threat', async (req, res) => {
         planes: true
       }
     });
-
+    console.log(`saved ${threat}`)
     // Respond with success message
     res.status(200).json({ message: 'Threat details saved successfully', threat });
   } catch (error) {
@@ -183,6 +183,7 @@ router.post('/save-threat', async (req, res) => {
 
 
 router.get('/saved-data', async (req, res) => {
+  console.log(`in save data`)
   try {
     // fetching database data using Prisma
     const savedData = await prisma.threat.findMany({
@@ -192,6 +193,7 @@ router.get('/saved-data', async (req, res) => {
     });
 
     // Respond with the fetched data
+    console.log(`have: ${savedData}`)
     res.status(200).json(savedData);
   } catch (error) {
     console.error('Error fetching saved data:', error);

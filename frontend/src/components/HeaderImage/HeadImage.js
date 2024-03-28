@@ -9,9 +9,12 @@ const HeadImage = () => {
 
   const openModal = async () => {
     try {
+      console.log('in saved data')
       // fetching database data from the server
-      const response = await fetch('/saved-data');
+      const response = await fetch('http://localhost:4000/saved-data');
+      console.log('after response')
       if (response.ok) {
+        console.log('response is ok')
         const data = await response.json();
         setSavedData(data);
         setIsModalOpen(true);

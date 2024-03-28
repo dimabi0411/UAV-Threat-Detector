@@ -8,7 +8,10 @@ services:
       - '4000:4000'
     environment:
       NODE_ENV: production
+      DATABASE_URL: postgresql://postgres:PoPo1234@database:5432/UAVThreatDetectorDB
     depends_on:
+      - database
+    links:
       - database
   
   frontend:
@@ -21,6 +24,8 @@ services:
   
   database:
     image: postgres
+    ports:
+      - '5432:5432'
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: PoPo1234
@@ -30,3 +35,7 @@ services:
 
 volumes:
   postgres_data:
+
+networks:
+  default:
+    name: UTD_network
