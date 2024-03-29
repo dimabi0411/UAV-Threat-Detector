@@ -13,12 +13,12 @@ Download the project, or clone the project using the git clone command.
 Either open the project in an IDE and open the terminal, or navigate to the project root directory.
 
 To run the project type in the terminal/cmd:
-  docker-compose up --build
+  - docker-compose up --build
 
 (Wait for it to build),
 
 Then type: 
-  docker-compose exec backend npx prisma migrate dev
+  - docker-compose exec backend npx prisma migrate dev
 
 The project should be running now. You can access the project in your web browser by typing in:
   http://localhost:3000
