@@ -1,4 +1,5 @@
-UAV Threat Detector
+Project name: UAV Threat Detector
+
 The project allows decision makers to input coordinates for a potential UAV threat, along with its speed and maximum radius.
 The backend system then computes and finds nearby (potential) friendly aircrafts within the specified threat radius.
 If any aircrafts are detected, the system would sort them from the closest to the farthest, and would respond with the closest aircraft's details.
