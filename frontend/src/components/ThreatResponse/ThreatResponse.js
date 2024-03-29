@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { CiSaveDown2 } from "react-icons/ci";
 const ThreatResponse = ({ response }) => {
-  const [isSaving, setIsSaving] = useState(false); // State to track saving process
-  const [saveError, setSaveError] = useState(null); // State to store save error, if any errors
-
+  const [isSaving, setIsSaving] = useState(false);
+  const [saveError, setSaveError] = useState(null);
+  const [saveSuccess, setSaveSuccess] = useState(false);
   const handleSave = async () => {
     try {
       setIsSaving(true);
@@ -26,12 +26,14 @@ const ThreatResponse = ({ response }) => {
       });
 
       console.log('Threat details saved successfully:', saveResponse.data);
+      setSaveSuccess(true);
+      setSaveError(null); 
     } catch (error) {
       // Setting an error state if request fails
       setSaveError('Error saving threat details');
       console.error('Error saving threat details:', error);
     } finally {
-      setIsSaving(false); // Reset saving state after request is complete
+      setIsSaving(false);
     }
   };
 
@@ -77,6 +79,7 @@ const ThreatResponse = ({ response }) => {
       {/*<button onClick={handleSave} disabled={isSaving}>Save</button>*/}
       <CiSaveDown2 className='icon' style={{fontSize: "40px", marginTop: "10px"}} onClick={handleSave} disabled={isSaving}/>
       {saveError && <p>{saveError}</p>}
+      {saveSuccess && <p style={{color: 'green'}}>Threat details saved successfully!</p>}
     </div>
   );
 };
